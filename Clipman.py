@@ -20,8 +20,7 @@ def start():
         subprocess.call([server, '-t', 'text', '--watch', client, 'store'])
 
 def add(text):
-    # Not implemented
-    pass
+    subprocess.call(['wl-copy', text])
 
 def getHistory():
     return execGet(client, 'pick', '--tool=STDOUT', '--max-items=25', '--print0').split('\x00')
